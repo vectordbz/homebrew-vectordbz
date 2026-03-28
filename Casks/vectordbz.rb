@@ -8,7 +8,10 @@ cask "vectordbz" do
   homepage "https://github.com/vectordbz/vectordbz"
 
   depends_on macos: ">= :ventura"
-  arch hardware: :arm64
+
+  on_intel do
+    disable! date: "2026-03-28", because: "no Intel Mac build is available"
+  end
 
   app "VectorDBZ.app"
 
